@@ -27,14 +27,14 @@ import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 
 const Orders = () => {
   const [value, setValue] = useState("1");
-  const [allproducts, setallProducts] = useState([]);
+  const [allproducts, setallProducts] = useState([]); 
   const [refresh, setRefresh] = useState(false);
 
   useEffect(() => {
     axios
       .get(`${base}/OrderProduct`)
       .then((res) => {
-        setallProducts(res?.data);
+        setallProducts(res?.data?.reverse());
       })
       .catch((error) => {
         console.log("err", error);
@@ -97,7 +97,7 @@ const Orders = () => {
               </TableRow>
             </TableHead>
             <TableBody>
-              {d?.reverse()?.map((row) => (
+              {d?.map((row) => (
                 <TableRow
                   key={row.name}
                   sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
@@ -122,7 +122,7 @@ const Orders = () => {
                     :
                     row?.delivered == "delivered"?  <span className="text-green-500 font-semibold  ">Delivered</span>
                     :
-                    <span className="text-yellow-500 ">Pending</span> 
+                    <span className="text-yellow-500 ">Pending</span>
                     }
 
                   </TableCell>
