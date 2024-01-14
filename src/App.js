@@ -20,6 +20,7 @@ import "react-toastify/dist/ReactToastify.css";
 import AdminLogin from "./Pages/admin/AdminLogin";
 import Orders from "./Pages/admin/Orders";
 import { base } from "./others/api";
+import Success from "./Pages/others/Success";
 
 function App() {
   const router = createBrowserRouter([
@@ -51,6 +52,10 @@ function App() {
         {
           path: "/Login",
           element: <Login></Login>,
+        },
+        {
+          path: "/success",
+          element: <Success></Success>,
         },
         {
           path: "/Register",
@@ -111,7 +116,7 @@ function App() {
           path: "/Pulses/:id",
           loader: async ({ params }) => {
             return fetch(
-              `${base}/products/${params.id}` 
+              `${base}/products/${params.id}`
 
             );
           },
