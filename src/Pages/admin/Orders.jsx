@@ -27,7 +27,7 @@ import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 
 const Orders = () => {
   const [value, setValue] = useState("1");
-  const [allproducts, setallProducts] = useState([]); 
+  const [allproducts, setallProducts] = useState([]);
   const [refresh, setRefresh] = useState(false);
 
   useEffect(() => {
@@ -118,6 +118,7 @@ const Orders = () => {
                   </TableCell>
                   <TableCell align="right">{row?.phone} </TableCell>
                   <TableCell align="right">
+                    {/* {!(row?.delivered) && <span className="text-yellow-500 ">Pending</span> } */}
                     {row?.delivered == "Cancelled" ? <span className="text-red-500 font-semibold">Cancelled</span>
                     :
                     row?.delivered == "delivered"?  <span className="text-green-500 font-semibold  ">Delivered</span>
@@ -128,9 +129,8 @@ const Orders = () => {
                   </TableCell>
 
                   <TableCell align="right">
-                    {row?.delivered ? (
-                      ""
-                    ) : (
+                    {!(row?.delivered) || row?.delivered=="pending" ?
+                    (
                       <div className="flex items-center gap-4">
                         <button
                           onClick={() => approveOrder(row)}
@@ -145,7 +145,8 @@ const Orders = () => {
                           <DeleteIcon style={{ color: "red" }} />
                         </button>
                       </div>
-                    )}
+                    )
+                  :"" } 
                   </TableCell>
                 </TableRow>
               ))}

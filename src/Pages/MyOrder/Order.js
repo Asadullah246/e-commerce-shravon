@@ -29,6 +29,7 @@ const Order = ({ request }) => {
                         <td className='lg:w-52'><b>{quantity}</b> kg</td>
 
                         <td className='lg:w-52'> <b>{totalprice}</b> tk</td>
+                        <td className='lg:w-52'> <b>{request?.delivered || "Pending"}</b></td> 
 
                     </tr>
 

@@ -41,6 +41,7 @@ const Nav = () => {
                             <Link to="/Pulses"><li><a >Pulses</a></li></Link>
                             <Link to="/About"><li><a >About</a></li></Link>
                             <Link to="/Contact"><li><a >Contact</a></li></Link>
+                            <Link to="/dashboard"><li><a >Admin Login</a></li></Link>
                             <Link to='/Cart' ><li><a className='    text-center rounded-b-lg '> <b><FontAwesomeIcon className='     ' icon={faCartShopping} /></b></a></li></Link>
 
                         </ul>
@@ -57,6 +58,7 @@ const Nav = () => {
                         <Link to="/Pulses"><li><a >Pulses</a></li></Link>
                         <Link to="/About"><li><a className=''>About</a></li></Link>
                         <Link to="/Contact"><li><a className=''>Contact</a></li></Link>
+                        <Link to="/dashboard"><li><a >Admin Login</a></li></Link>
                         <Link to='/Cart' ><li><a className='    text-center rounded-b-lg '> <b><FontAwesomeIcon className='     ' icon={faCartShopping} /></b></a></li></Link>
                     </ul>
                 </div>
