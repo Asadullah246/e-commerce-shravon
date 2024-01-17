@@ -40,9 +40,9 @@ function App() {
             );
           },
           element: (
-            <PrivateRout>
-              <Pulses></Pulses>
-            </PrivateRout>
+            // <PrivateRout>
+              <Pulses></Pulses> 
+            // </PrivateRout>
           ),
         },
         {

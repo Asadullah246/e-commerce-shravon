@@ -5,7 +5,7 @@ import { base } from '../../../others/api';
 import ToastSuccess from '../../../others/toast';
 
 const PulsesDetails = () => {
-    const { user } = useContext(AuthContext)
+    const { user, refresh, setRefresh } = useContext(AuthContext)
     const puls = useLoaderData()
     const { _id, productName, Detail, image2, price, image } = puls;
 
@@ -40,7 +40,8 @@ const PulsesDetails = () => {
                 console.log(data)
                 if (data.acknowledged) {
                    ToastSuccess("Added to cart successfully")
-                    form.reset(); 
+                   setRefresh(!refresh) 
+                    form.reset();
 
                 }
             })

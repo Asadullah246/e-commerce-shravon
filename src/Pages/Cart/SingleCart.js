@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { base } from '../../others/api';
+import { AuthContext } from '../../Context/AuthPro/AuthPro';
 
 const SingleCart = ({ request, setpayContact }) => {
     const { name, price, productName, quantity, phone, email, image, _id } = request;
+    const { setRefresh, refresh } = useContext(AuthContext);
     const mainprice = price * quantity;
 
     const hendleDelete = request => {
@@ -13,7 +15,10 @@ const SingleCart = ({ request, setpayContact }) => {
                 method: "DELETE"
             })
                 .then(res => res.json())
-                .then(data => console.log(data))
+                .then(data => {
+                    console.log(data)
+                    setRefresh(!refresh) 
+                })
         }
 
     }

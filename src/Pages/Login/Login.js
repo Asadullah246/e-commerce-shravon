@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Form, Link, useLocation, useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { } from '@fortawesome/free-solid-svg-icons'
@@ -8,13 +8,21 @@ import googleLogo from '../../New folder/google logo.png'
 
 const Login = () => {
 
-    const { signIn, signInWithGoogle, loading } = useContext(AuthContext)
+    const { signIn, signInWithGoogle, loading,user } = useContext(AuthContext)
+    // const auth = getAuth(app);
+    // const [user, error] = useAuthState(auth);
+
     const location = useLocation();
-    const from = location.state?.from?.pathname || '/';
+    let from = location.state?.from?.pathname || "/";
     const navigate = useNavigate();
     const [loginError, setLoginError] = useState('')
 
-
+useEffect(()=>{
+    
+    if(user){
+        navigate(from, { replace: true });
+    }
+},[user, from, navigate])
     const userLogin = event => {
         event.preventDefault();
         const form = event.target;
