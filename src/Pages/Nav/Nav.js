@@ -86,15 +86,15 @@ const Nav = () => {
               </Link>
 
               <Link to="/Cart">
-                <li className="relative ">
-                  <a className=" text-center rounded-b-lg ">
-                    {" "}
-                    <b>
-                      <FontAwesomeIcon className="" icon={faCartShopping} />
-                    </b>
-                  </a>
-                  <p className="absolute top-0 right-0 text-black ">dfdfdf</p>
-                </li>
+              <li className="relative ">
+                <a className=" text-center rounded-b-lg ">
+                  {" "}
+                  <b> 
+                    <FontAwesomeIcon className="" icon={faCartShopping} />
+                  </b>
+                </a>
+                <p className="absolute top-[-13px] right-[-10px] font-semibold   text-blue-600 ">{cart?.length || 0}</p>
+              </li>
               </Link>
             </ul>
           </div>
@@ -150,7 +150,7 @@ const Nav = () => {
                 <a className="text-white  flex">
                   <div className="avatar online ">
                     <div className="w-10 rounded-full">
-                      <img alt="User" 
+                      <img alt="User"
                         src={
                           user?.photoURL
                         }
