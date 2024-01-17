@@ -89,11 +89,13 @@ const Nav = () => {
               <li className="relative ">
                 <a className=" text-center rounded-b-lg ">
                   {" "}
-                  <b> 
+                  <span className="relative"> 
                     <FontAwesomeIcon className="" icon={faCartShopping} />
-                  </b>
+                    <p className="absolute top-[-13px] right-[-10px] font-semibold   text-blue-600 ">{cart?.length || 0}</p>
+
+                  </span>
+
                 </a>
-                <p className="absolute top-[-13px] right-[-10px] font-semibold   text-blue-600 ">{cart?.length || 0}</p>
               </li>
               </Link>
             </ul>
