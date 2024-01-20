@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const Puls = ({ puls }) => {
-    console.log(puls);
+    console.log("pul", puls);
     const { _id, productName, Detail, image, price } = puls;
     return (
         <div className=''>

@@ -122,6 +122,18 @@ const Dashboard = () => {
                 <DriveFolderUploadIcon /> Feedbacks
               </Link>
             </li>
+            <li className="mb-2 ">
+              <Link
+                to="chatting"
+                style={{
+                  color: "#1976D2",
+                  fontWeight: 700,
+                  fontSize: "1.1em ",
+                }}
+              >
+                <DriveFolderUploadIcon /> Messages 
+              </Link>
+            </li>
 
 
 

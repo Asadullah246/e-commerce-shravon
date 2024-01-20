@@ -17,7 +17,7 @@ const PulsesForHome = () => {
           console.log("err", error);
         })
       },[])
-    //   console.log("palut", allproducts ); 
+      console.log("palut", allproducts );
     return (
         <div className='stats '>
 
@@ -35,7 +35,15 @@ const PulsesForHome = () => {
                                     <h2 className="card-title">{a?.productName}</h2>
                                     <p className=' text-justify'>{a?.Detail}</p>
                                 </div>
-                                <figure><img src={a?.image} alt="Pulse" className=' w-full max-h-64' /></figure>
+                                <figure>
+                                    {
+                                        a?.image?.includes("i.ibb.co") ?
+                                        <img src={a?.image} alt="Pulse" className=' w-full max-h-64' />
+                                        :
+                                        <img src={`${base}/${a?.image}`} alt="Pulse" className=' w-full max-h-64' />
+                                    }
+
+                                    </figure> 
                             </div>
                         </Link>
                         )

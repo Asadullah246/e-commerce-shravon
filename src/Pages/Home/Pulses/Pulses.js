@@ -7,6 +7,7 @@ import Puls from './Puls';
 
 const Pulses = () => {
     const pulses = useLoaderData()
+    console.log("pu", pulses )
 
 
     return (

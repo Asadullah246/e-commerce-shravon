@@ -22,6 +22,7 @@ import Orders from "./Pages/admin/Orders";
 import { base } from "./others/api";
 import Success from "./Pages/others/Success";
 import Feedback from "./Pages/admin/Feedback";
+import Chatting from "./Pages/admin/Chatting";
 
 function App() {
   const router = createBrowserRouter([
@@ -111,7 +112,11 @@ function App() {
             },
             {
               path: "feedbacks",
-              element: <Feedback></Feedback>, 
+              element: <Feedback></Feedback>,
+            },
+            {
+              path: "chatting",
+              element: <Chatting></Chatting>, 
             },
             // Add more nested routes as needed
           ],
