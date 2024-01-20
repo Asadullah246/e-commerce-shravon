@@ -29,7 +29,7 @@ const Dashboard = () => {
   }, [navigate]);
 
   if(!user){
-    return <p>Loading ...</p> 
+    return <p>Loading ...</p>
   }
 
   const logout = () => {
@@ -108,6 +108,18 @@ const Dashboard = () => {
                 }}
               >
                 <DriveFolderUploadIcon /> Orders Manage
+              </Link>
+            </li>
+            <li className="mb-2 ">
+              <Link
+                to="feedbacks"
+                style={{
+                  color: "#1976D2",
+                  fontWeight: 700,
+                  fontSize: "1.1em ",
+                }}
+              >
+                <DriveFolderUploadIcon /> Feedbacks
               </Link>
             </li>
 

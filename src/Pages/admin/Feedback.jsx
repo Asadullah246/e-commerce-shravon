@@ -27,14 +27,15 @@ import ToastSuccess, { ToastError } from "../../others/toast";
 import { base } from "../../others/api";
 
 
-const Products = () => {
+const Feedback = () => {
   const [value, setValue] = useState("1");
   const [ allproducts, setallProducts ] =useState([]);
   const [ refresh, setRefresh ] =useState(false);
 
   useEffect(()=>{
-    axios.get(`${base}/Products`)
+    axios.get(`${base}/feedback`)
     .then(res=>{
+        console.log("res feedback", res );
       setallProducts(res?.data)
     })
     .catch(error=>{
@@ -49,7 +50,7 @@ const Products = () => {
 
   const deleteDoc = (row) => {
     axios
-      .delete(`${base}/Products/${row._id}`)
+      .delete(`${base}/feedback/${row._id}`)
       .then(function (response) {
         setRefresh(!refresh);
         ToastSuccess("Successfully product deleted");
@@ -71,21 +72,21 @@ const Products = () => {
           <Table sx={{ minWidth: 650 }} aria-label="simple table">
             <TableHead>
               <TableRow>
-                <TableCell>Image & Name</TableCell>
-                <TableCell align="right">Price</TableCell>
-                <TableCell align="right">Details</TableCell>
+                <TableCell>Email</TableCell>
+                {/* <TableCell align="right">Price</TableCell> */}
+                <TableCell align="right">Feedback</TableCell>
                 {/* <TableCell align="right">Download</TableCell> */}
-                <TableCell align="right">Manage</TableCell>
+                <TableCell align="right">Delete</TableCell>
                 {/* <TableCell align="right">Protein&nbsp;(g)</TableCell> */}
               </TableRow>
             </TableHead>
             <TableBody>
               {d?.map((row) => (
                 <TableRow
-                  key={row?.name}
+                  key={row._id}
                   sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
                 >
-                  <TableCell component="th" scope="row">
+                  {/* <TableCell component="th" scope="row">
                     <div className="flex items-center gap-2">
                       <Avatar
                         alt="Travis Howard"
@@ -93,9 +94,9 @@ const Products = () => {
                       />
                       <p className="text-[1em]">{row?.productName} </p>
                     </div>
-                  </TableCell>
-                  <TableCell align="right">{row?.price}</TableCell>
-                  <TableCell align="right">{row?.Detail?.slice(0,50)} ...</TableCell>
+                  </TableCell> */}
+                  <TableCell align="left">{row?.email}</TableCell>
+                  <TableCell align="right" className="text-black ">{row?.feedback}</TableCell> 
 
 
                   <TableCell align="right">
@@ -124,7 +125,7 @@ const Products = () => {
           <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
             <TabList onChange={handleChange} aria-label="lab API tabs example">
               {/* <Tab label="Pending" value="1" /> */}
-              <Tab label="All Products" value="1" />
+              <Tab label="Feedbacks" value="1" />
               {/* <Tab label="Cancelled" value="3" /> */}
               {/* <Tab label="others" value="4" /> */}
             </TabList>
@@ -139,5 +140,6 @@ const Products = () => {
   );
 };
 
-export default Products;
+export default Feedback;
+
 

@@ -21,6 +21,7 @@ import AdminLogin from "./Pages/admin/AdminLogin";
 import Orders from "./Pages/admin/Orders";
 import { base } from "./others/api";
 import Success from "./Pages/others/Success";
+import Feedback from "./Pages/admin/Feedback";
 
 function App() {
   const router = createBrowserRouter([
@@ -41,7 +42,7 @@ function App() {
           },
           element: (
             // <PrivateRout>
-              <Pulses></Pulses> 
+              <Pulses></Pulses>
             // </PrivateRout>
           ),
         },
@@ -107,6 +108,10 @@ function App() {
             {
               path: "orders",
               element: <Orders></Orders>,
+            },
+            {
+              path: "feedbacks",
+              element: <Feedback></Feedback>, 
             },
             // Add more nested routes as needed
           ],
