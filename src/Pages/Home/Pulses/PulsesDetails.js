@@ -72,7 +72,7 @@ const PulsesDetails = () => {
               <img
                 src={`${base}/${image2[0]}`}
                 alt="Pulse"
-                className="max-w-full rounded-lg shadow-2xl" 
+                className="max-w-full rounded-lg shadow-2xl"
               />
             ) : (
               <img src={image2} alt="Pulse" className="max-w-full rounded-lg shadow-2xl" />
@@ -129,7 +129,7 @@ const PulsesDetails = () => {
               </span>{" "}
               <br />
               <button className="btn mt-2   w-full max-w-xs drop-shadow-lg mb-10 btn-neutral ">
-                Add to Catr
+                Add to Cart
               </button>
             </div>
           </form>
